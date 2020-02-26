@@ -1,18 +1,11 @@
-<view class="page" style="background: url('{{imgCDN}}{{images}}'); background-size: 100% 100%;">
-  <view class="button_container">
-    <navigator class="button" url="map/details">
-      <text>{{shortName}}简介</text>
-    </navigator>
-    <navigator class="button" url="map/index">
-      <text>逛逛{{shortName}}</text>
-    </navigator>
-  </view>
-  <view class="copyright">
-    <navigator target="miniProgram" app-id="wx8afedfde046e5916">
-      <text>© 莞香广科</text>
-    </navigator>
-    <navigator url="web-views/web-views?url={{mapCopyright.url}}">
-      <text>{{mapCopyright?"数据版权："+mapCopyright.name:""}}</text>
-    </navigator>
+<view wx:if="{{show_auth}}" class='auth-container'>
+  <view class='auth-wall'>
+    <view class='auth-tips'>
+      <image src='/image/wechat-logo.png'></image>
+      <view>Hello , 欢迎使用逛逛北工大 ！</view>
+    </view>
+    <button open-type="getUserInfo" bindgetuserinfo="getAuthUserInfo" class='auth-button'>
+      <view>开始使用</view>
+    </button>
   </view>
 </view>

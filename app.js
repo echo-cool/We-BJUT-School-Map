@@ -1,8 +1,25 @@
 //app.js
 let config = require('config.js')
+const AV = require('utils/av-weapp-min.js');
+AV.init({
+    appId: 'fmAfIR0i381taaTYqnyby1fp-gzGzoHsz',
+    appKey: 'akFkj5y6MWvfeG1OabHIc4tl',
+    serverURLs: "https://fmafir0i.lc-cn-n1-shared.com",
+  });
+ 
 App({
   onLaunch: function() {
     var _this = this;
+    if (!wx.cloud) {
+        console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+
+    } else {
+        wx.cloud.init({
+            traceUser: true,
+        })
+    }
+
+      
     //载入学校位置数据
     _this.loadSchoolConf()
     //如果已经授权，提前获取定位信息
