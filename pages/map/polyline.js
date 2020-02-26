@@ -44,13 +44,15 @@ Page({
   },
   routing: function (options){
     var _this = this;
+    console.log(options)
     let distance = Math.abs(_this.data.longitude - options.longitude) + Math.abs(_this.data.latitude - options.latitude)
-    console.log(distance);
+    console.log("distance:"+distance);
     var myAmapFun = new amapFile.AMapWX({ key: require('../../config.js').key });
     let routeData = {
       origin: options.longitude + ',' + options.latitude,
       destination: _this.data.longitude + ',' + _this.data.latitude,
       success: function (data) {
+        console.log(data)
         var points = [];
         if (data.paths && data.paths[0] && data.paths[0].steps) {
           var steps = data.paths[0].steps;
@@ -91,6 +93,7 @@ Page({
         }
       },
       fail: function (info) {
+         console.log(info)
       }
     }
     if (distance < 0.85) {
