@@ -60,8 +60,9 @@ App({
           },
           success: function(res) {
             console.log("加载远程数据")
-            if (res.data.map && res.data.map.length > 0) {
-              //刷新数据
+            console.log(res)
+            
+            if (res.data) {
               _this.globalData.map = res.data.map;
               _this.globalData.introduce = res.data.introduce;
 
