@@ -1,7 +1,8 @@
 // pages/index/index.js
 var app = getApp()
-const config = require("../config.js");
-const AV = require('../utils/av-weapp-min.js');
+const config = require("../config");
+
+const AV = require('../utils/av-weapp-min');
 Page({
 
     /**

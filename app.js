@@ -1,6 +1,6 @@
 //app.js
-let config = require('config.js')
-const AV = require('utils/av-weapp-min.js');
+let config = require('config')
+const AV = require('utils/av-weapp-min');
 AV.init({
     appId: 'fmAfIR0i381taaTYqnyby1fp-gzGzoHsz',
     appKey: 'akFkj5y6MWvfeG1OabHIc4tl',
